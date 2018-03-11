@@ -1,0 +1,17 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.agoney.comparaprecios.producto_imagen">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ImageButton
+        android:id="@+id/imageProducto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/imagen"
+        app:srcCompat="@android:drawable/ic_input_add"
+        />
+
+</FrameLayout>

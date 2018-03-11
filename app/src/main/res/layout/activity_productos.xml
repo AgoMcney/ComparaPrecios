@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.agoney.comparaprecios.ActivityProductos"
+    android:orientation="vertical"
+    android:weightSum="5"
+    >
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        >
+    <Button
+        android:id="@+id/btnAgregar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/agregar"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="16dp" />
+    <Button
+        android:id="@+id/btnEditar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/editar"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/btnAgregar"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:id="@+id/btnBuscar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/buscar"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/btnEditar" />
+
+    <Button
+        android:id="@+id/btnEliminar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/eliminar"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/btnBuscar"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <LinearLayout
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+
+        android:orientation="vertical"
+        android:layout_marginStart="8dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintLeft_toLeftOf="parent">
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/CampoTextoPurpura"
+            android:textColorHint="@color/colorHint"
+            >
+        <EditText
+            android:id="@+id/TxtInputNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/name"
+            android:maxLines="1"
+            />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            >
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TableRow>
+
+                    <CheckBox
+                        android:id="@+id/checkBoxFamilia1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:checked="true"
+                        android:text="@string/familia1"
+
+                        />
+                </TableRow>
+
+                <CheckBox
+                    android:id="@+id/checkBoxFamilia2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:hint="@string/familia2"
+                    android:text="@string/familia2" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxFamilia3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:hint="@string/familia3"
+                    android:text="@string/familia3" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxFamilia4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:hint="@string/familia4"
+                    android:text="@string/familia4" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxFamilia5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:hint="@string/familia5"
+                    android:text="@string/familia5" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxFamilia6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:hint="@string/familia6"
+                    android:text="@string/familia6" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxFamilia7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:hint="@string/familia7"
+                    android:text="@string/familia7" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxFamilia8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:hint="@string/familia8"
+                    android:text="@string/familia8" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxFamilia9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:hint="@string/familia9"
+                    android:text="@string/familia9" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxFamilia10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:hint="@string/familia10"
+                    android:text="@string/familia10" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxFamilia11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:hint="@string/familia11"
+                    android:text="@string/familia11" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxFamilia12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:hint="@string/familia12"
+                    android:text="@string/familia12" />
+            </TableLayout>
+        </ScrollView>
+
+    </LinearLayout>
+    </android.support.constraint.ConstraintLayout>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+
+
+</LinearLayout>
+

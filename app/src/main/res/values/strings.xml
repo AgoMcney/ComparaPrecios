@@ -1,0 +1,64 @@
+<resources>
+    <string name="app_name">ComparaPrecios</string>
+    <!--   Navigation Drawler  -->
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_settings">Settings</string>
+
+    <!--   familias de productos -->
+    <string name="familia1">Alimentación General</string>
+    <string name="familia2">Desayunos, dulces y pan</string>
+    <string name="familia3">Lácteos</string>
+    <string name="familia4">Congelados</string>
+    <string name="familia5">Dietética</string>
+    <string name="familia6">Bebidas</string>
+    <string name="familia7">Frescos</string>
+    <string name="familia8">Bebés</string>
+    <string name="familia9">Higiene Personal</string>
+    <string name="familia10">Droguería y limpieza</string>
+    <string name="familia11">Mascotas</string>
+    <string name="familia12">Otros</string>
+    <!--   tiendas de precios -->
+    <string name="tienda1">El corte inglés</string>
+    <string name="tienda2">Mercadona</string>
+    <string name="tienda3">Carrefour</string>
+    <string name="tienda4">Hiperdino</string>
+    <string name="tienda5">Spar</string>
+    <string name="tienda6">Otro</string>
+    <!--   errores -->
+    <string name="error_obligatorio">El campo no puede estar vacío</string>
+    <string name="error_numero">Campo debe ser númerico</string>
+    <string name="error_prueba"></string>
+    <!--   Otras etiquetas -->
+    <string name="name">Nombre</string>
+    <string name="precio">Precio del producto</string>
+    <string name="imagen">Añada una imagen al producto</string>
+    <string name="contruccion">Aplicación en contrucción. \n Disculpe las molestias. </string>
+    <string name="version">Versión: 0.2</string>
+    <!--   botones -->
+    <string name="cabecera">Menú Principal</string>
+    <string name="productos">Productos</string>
+    <string name="lista">Lista de la Compra</string>
+    <string name="infoApp">Información</string>
+    <string name="salir">Salir</string>
+    <string name="agregar">Agregar</string>
+    <string name="editar">Editar</string>
+    <string name="buscar">Buscar</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="guardar">Guardar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="title_activity_agregar">ActivityAgregar</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="aceptar_precios">Registrar precios</string>
+    <!--  App bar  -->
+    <string name="ayuda">Ayuda</string>
+    <!--  Titulos de menú  -->
+    <string name="titulo_productos">Buscador de productos</string>
+    <string name="titulo_agregar">Agregar un producto</string>
+    <string name="titulo_lista">Lista de la compra</string>
+    <string name="titulo_info">Información de la App</string>
+    <string name="titulo_ayuda">Ayuda de la App</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

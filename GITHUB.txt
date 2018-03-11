@@ -1,0 +1,29 @@
+echo "# cicloDAM_PGL" >> README.md
+git init     
+git add README.md  (add . añade todo al stage, fase intermedia)
+git commit -m "first commit"
+git remote add origin https://github.com/AgoMcney/cicloDAM_PGL.git
+git push -u origin master
+
+
+1) inica y crea la carpeta Git
+2) crea un txt, se puede omitir
+3) copia los archivos localmente
+4) determina la carpeta en el server
+5) sube los archivos al server
+
+Configurar usuarios
+----------------------------
+Git config --global user.email mcney36@gmail.com
+Git config --global user.name “AgoMcney”
+
+Branch
+-------------
+(ver bracnh)
+git branch
+(Cambiar rama)
+git checkout -b develop
+(ver commits)
+git log
+(cambiar de commits)
+git checkout a363 (estos números son los primeros de tu commit)

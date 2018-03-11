@@ -1,0 +1,172 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.agoney.comparaprecios.producto_precios">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="left"
+        >
+        <TableRow>
+
+            <TextView
+                android:id="@+id/txtTienda1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_weight="5"
+                android:text="@string/tienda1"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/editTextTienda1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_column="2"
+                android:layout_weight="4"
+                android:ems="4"
+                android:hint="@string/precio"
+                android:imeOptions="actionNext"
+                android:inputType="numberDecimal"
+                android:textColorHint="@color/colorHint"
+                android:textSize="12sp"
+                android:theme="@style/CampoTextoPurpura" />
+
+            <TextView
+                android:id="@+id/txtTienda2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_column="3"
+                android:layout_weight="5"
+                android:text="@string/tienda2"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/editTextTienda2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_column="4"
+                android:layout_weight="4"
+                android:ems="4"
+                android:hint="@string/precio"
+                android:imeOptions="actionNext"
+                android:inputType="numberDecimal"
+                android:textColorHint="@color/colorHint"
+                android:textSize="12sp"
+                android:theme="@style/CampoTextoPurpura" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/txtTienda3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtTienda2"
+                android:layout_column="1"
+                android:layout_weight="5"
+                android:text="@string/tienda3"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/editTextTienda3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_column="2"
+                android:layout_weight="4"
+                android:ems="4"
+                android:hint="@string/precio"
+                android:imeOptions="actionNext"
+                android:inputType="numberDecimal"
+                android:textColorHint="@color/colorHint"
+                android:textSize="12sp"
+                android:theme="@style/CampoTextoPurpura" />
+
+            <TextView
+                android:id="@+id/txtTienda4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_column="3"
+                android:layout_weight="5"
+                android:text="@string/tienda4"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/editTextTienda4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_column="4"
+                android:layout_weight="4"
+                android:ems="4"
+                android:hint="@string/precio"
+                android:imeOptions="actionNext"
+                android:inputType="numberDecimal"
+                android:textColorHint="@color/colorHint"
+                android:textSize="12sp"
+                android:theme="@style/CampoTextoPurpura" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/txtTienda5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_weight="5"
+                android:text="@string/tienda5"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/editTextTienda5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_column="2"
+                android:layout_weight="4"
+                android:ems="6"
+                android:hint="@string/precio"
+                android:imeOptions="actionNext"
+                android:inputType="numberDecimal"
+                android:textColorHint="@color/colorHint"
+                android:textSize="12sp"
+                android:theme="@style/CampoTextoPurpura" />
+
+            <TextView
+                android:id="@+id/txtTienda6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_column="3"
+                android:layout_weight="5"
+                android:text="@string/tienda6"
+                android:textSize="14sp" />
+            <EditText
+                android:id="@+id/editTextTienda6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:ems="6"
+                android:inputType="numberDecimal"
+                android:hint="@string/precio"
+                android:textSize="14sp"
+                android:layout_column="4"
+                android:imeOptions="actionNext"
+                android:theme="@style/CampoTextoPurpura"
+                android:textColorHint="@color/colorHint"
+                />
+        </TableRow>
+
+
+        <Button
+            android:id="@+id/btnAceptarPrecios"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/aceptar_precios"
+            android:gravity="center"
+            android:layout_gravity="bottom"
+            />
+    </TableLayout>
+
+</FrameLayout>
