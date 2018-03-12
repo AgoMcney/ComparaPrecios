@@ -109,4 +109,6 @@
             el nombre, precio e imagen del producto. Recuerde guardar los precios desde el botón.</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_extras">Utilidades Varias</string>
+    <string name="title_activity_descarga_pdf">Descargar PDF</string>
 </resources>

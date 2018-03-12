@@ -9,9 +9,9 @@
         <item name="actionModeStyle">@style/action_mode_estilo</item>
     </style>
     <!-- creamos estilo para el menú contextual -->
-<style name="action_mode_estilo" parent="Widget.AppCompat.ActionMode">
-    <item name="background">@color/colorPrimary</item>
-</style>
+    <style name="action_mode_estilo" parent="Widget.AppCompat.ActionMode">
+        <item name="background">@color/colorPrimary</item>
+    </style>
 
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>

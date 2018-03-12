@@ -85,6 +85,17 @@ public class MainActivity extends AppCompatActivity
             }
         });  // cerramos el click listener
 
+        Button btnTib = (Button) findViewById(R.id.btn_Extras);
+
+        btnTib.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(contexto, ActivityExtras.class);
+                startActivity(intent); // ejecuta el intento.
+            }
+        });
+
+
     }
 
     @Override

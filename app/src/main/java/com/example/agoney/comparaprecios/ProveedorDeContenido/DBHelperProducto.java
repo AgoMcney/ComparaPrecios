@@ -38,6 +38,25 @@ public class DBHelperProducto extends SQLiteOpenHelper{
                 Contrato.Producto.IMAGEN+ " IMG" +
                 ")";
         db.execSQL(creacion);
+
+        creacion = "CREATE TABLE "+  // ejecuta el Sql crear tabla
+                Contrato.Lista.NOMBRE_TABLA +
+                "( "+
+//     Contrato.Producto._ID+" INTEGER NOT NULL PRIMARY KEY  AUTOINCREMENT, "  + // campo ID autoincrementado
+
+                "_id INTEGER NOT NULL PRIMARY KEY ON CONFLICT ROLLBACK AUTOINCREMENT, "  + // campo ID autoincrementado
+                Contrato.Lista.NOMBRE+ " TEXT, " +
+                Contrato.Producto.FAMILIA+ " TEXT, " +
+                Contrato.Producto.PRECIO1+ " FLOAT, " +
+                Contrato.Producto.PRECIO2+ " FLOAT, " +
+                Contrato.Producto.PRECIO3+ " FLOAT, " +
+                Contrato.Producto.PRECIO4+ " FLOAT, " +
+                Contrato.Producto.PRECIO5+ " FLOAT, " +
+                Contrato.Producto.PRECIO6+ " FLOAT " +
+                Contrato.Producto.IMAGEN+ " IMG" +
+                ")";
+        db.execSQL(creacion);
+
         /*db.execSQL("CREATE TABLE "+  // ejecuta el Sql crear tabla
             Contrato.Producto.NOMBRE_TABLA +
                 "( "+

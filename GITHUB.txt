@@ -1,4 +1,6 @@
+https://github.com/AgoMcney/
 echo "# cicloDAM_PGL" >> README.md
+
 git init     
 git add README.md  (add . añade todo al stage, fase intermedia)
 git commit -m "first commit"

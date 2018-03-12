@@ -58,5 +58,13 @@
         android:text="@string/salir"
         android:textAlignment="center"
         android:textSize="18sp" />
+    <Button
+        android:id="@+id/btn_Extras"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Extras"
+        android:textAlignment="center"
+        android:textSize="18sp" />
 
 </android.support.v7.widget.LinearLayoutCompat>

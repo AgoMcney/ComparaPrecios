@@ -77,6 +77,7 @@
             android:label="@string/titulo_lenguaje"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
+
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -87,6 +88,7 @@
             android:label="@string/titulo_resultados"
             android:parentActivityName=".ActivityProductos"
             android:theme="@style/AppTheme.NoActionBar">
+
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -97,19 +99,34 @@
             android:label="@string/titulo_modificar"
             android:parentActivityName=".ActivityResultado"
             android:theme="@style/AppTheme.NoActionBar">
-        <!-- Parent activity meta-data to support 4.0 and lower -->
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value=".ActivityResultado" />
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ActivityResultado" />
         </activity>
 
         <provider
-            android:authorities="com.example.agoney.comparaprecios.ProveedorDeContenido.Proveedor"
             android:name=".ProveedorDeContenido.Proveedor"
+            android:authorities="com.example.agoney.comparaprecios.ProveedorDeContenido.Proveedor"
             android:enabled="true"
-            android:exported="true"
-            />
+            android:exported="true" />
 
+        <activity
+            android:name=".ActivityExtras"
+            android:label="@string/title_activity_extras"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ActivityResultado" />
+        </activity>
+        <activity
+            android:name=".ActivityDescargaPDF"
+            android:label="@string/title_activity_descarga_pdf"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>
