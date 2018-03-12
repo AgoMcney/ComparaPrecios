@@ -2,18 +2,23 @@ package com.example.agoney.comparaprecios.ProveedorDeContenido;
 
 import android.content.ContentResolver;
 import android.content.ContentValues;
+import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.example.agoney.comparaprecios.pojos.Producto;
+import com.example.agoney.comparaprecios.utilImagen;
+
+import java.io.IOException;
 
 /**
  * Created by Agoney on 30/10/2017.
  */
 // para realizar inserciones en el proveedor
 public class ProductoProveedor {
-    static public void  insert (ContentResolver resolvedor, Producto producto){
+    static public void  insert (ContentResolver resolvedor, Producto producto, Context contexto){
         Uri uri =Contrato.Producto.CONTENT_URI;
             // Uri.parse("content://"+ AUTHORITY + "/"+NOMBRE_TABLA);
         ContentValues values = new ContentValues(); // calse para ir introduciendo valores
@@ -25,15 +30,27 @@ public class ProductoProveedor {
         values.put (Contrato.Producto.PRECIO4, producto.getPrecio4());
         values.put (Contrato.Producto.PRECIO5, producto.getPrecio5());
         values.put (Contrato.Producto.PRECIO6, producto.getPrecio6());
+        // para obtener el id
+        Uri uriResultado =  resolvedor.insert(uri, values); // el uri esta en el ultimo segmento
+        String productoid = uriResultado.getLastPathSegment();
+        if (producto.getImagen()!=null){
+            try {
+                utilImagen.storeImage(producto.getImagen(), contexto, "img_"+productoid+ ".jpg"   );
+            } catch (IOException e) {
+                Toast.makeText(contexto, "Error: No se pudo guardar la imagen", Toast.LENGTH_SHORT).show();
+            }
+
+        }
+
         // resolver es para encontrar el proveedor de contenido.
-        resolvedor.insert(uri, values); //  objetivo final.
+//        resolvedor.insert(uri, values); //  objetivo final.
     }
     static public void delete (ContentResolver resolver, int productoId){
         Uri uri = Uri.parse(Contrato.Producto.CONTENT_URI+"/"+ productoId);
         //content://com.example.agoney.comparaprecios.ProveedorDeContenido.Proveedor/Producto/#
         resolver.delete(uri, null, null); // borramos
     }
-    static public void update (ContentResolver resolver, Producto producto){
+    static public void update (ContentResolver resolver, Producto producto, Context contexto){
         Uri uri = Uri.parse(Contrato.Producto.CONTENT_URI+"/"+ producto.getID());
         //content://com.example.agoney.comparaprecios.ProveedorDeContenido.Proveedor/Producto/#
         ContentValues values = new ContentValues(); // contenedor de valores
@@ -46,6 +63,13 @@ public class ProductoProveedor {
         values.put(Contrato.Producto.PRECIO5, producto.getPrecio5());
         values.put(Contrato.Producto.PRECIO6, producto.getPrecio6());
        resolver.update(uri, values, null, null); // actualizamos
+        if (producto.getImagen()!=null){
+            try {
+                utilImagen.storeImage(producto.getImagen(), contexto, "img_"+producto.getID()+".jpg");
+            } catch (IOException e) {
+                Toast.makeText(contexto, "Error: No se pudo guardar la imagen", Toast.LENGTH_SHORT).show();
+            }
+        }
     }
     static public Producto readRecord(ContentResolver resolver, int productoId){  // leer un registro
         // que registro? el que paso por parametros

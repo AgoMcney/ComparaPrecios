@@ -71,22 +71,22 @@ public class Fragment_agregar_precios extends Fragment {
         editTextTienda6 = (EditText) inflaterPrecios.findViewById(R.id.editTextTienda6);
         aceptarPrecios = (Button) inflaterPrecios.findViewById((R.id.btnAceptarPrecios));
 
-if (this.getArguments()!=null){
-    float insertarPrecio;
-    insertarPrecio  = this.getArguments().getFloat("precio1");
-    editTextTienda1.setText(String.valueOf(insertarPrecio));
-    insertarPrecio  = this.getArguments().getFloat("precio2");
-    editTextTienda2.setText(String.valueOf(insertarPrecio));
-    insertarPrecio  = this.getArguments().getFloat("precio3");
-    editTextTienda3.setText(String.valueOf(insertarPrecio));
-    insertarPrecio  = this.getArguments().getFloat("precio4");
-    editTextTienda4.setText(String.valueOf(insertarPrecio));
-    insertarPrecio  = this.getArguments().getFloat("precio5");
-    editTextTienda5.setText(String.valueOf(insertarPrecio));
-    insertarPrecio  = this.getArguments().getFloat("precio6");
-    editTextTienda6.setText(String.valueOf(insertarPrecio));
-    ponerPrecios();
-}
+        if (this.getArguments()!=null){
+            float insertarPrecio;
+            insertarPrecio  = this.getArguments().getFloat("precio1");
+            editTextTienda1.setText(String.valueOf(insertarPrecio));
+            insertarPrecio  = this.getArguments().getFloat("precio2");
+            editTextTienda2.setText(String.valueOf(insertarPrecio));
+            insertarPrecio  = this.getArguments().getFloat("precio3");
+            editTextTienda3.setText(String.valueOf(insertarPrecio));
+            insertarPrecio  = this.getArguments().getFloat("precio4");
+            editTextTienda4.setText(String.valueOf(insertarPrecio));
+            insertarPrecio  = this.getArguments().getFloat("precio5");
+            editTextTienda5.setText(String.valueOf(insertarPrecio));
+            insertarPrecio  = this.getArguments().getFloat("precio6");
+            editTextTienda6.setText(String.valueOf(insertarPrecio));
+            ponerPrecios();
+        }
         aceptarPrecios.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {

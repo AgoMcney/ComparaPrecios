@@ -48,16 +48,27 @@ public class ActivityAyuda extends AppCompatActivity {
                 txtAyuda.setText("Información de la app. \n"
                         +"\nControl de versiones\n" +
                         "-------------------------------\n" +
+                 " ver 0.4\n" +
+                "--------------- \n" +
+                "Cuarta Tarea\n" +
+                "--------------- \n" +
+                "- Añadido Floating Button \"Adjuntar imagen\" al fragment de imagen\n" +
+                "- Cambiado el botón \"Editar\" de Activity Productos por un botón para mostrar\n" +
+                "  todos los resultados.\n" +
+                "- Añadida funcionalidad para realizar y adjuntar fotos.\n" +
+                "- Iconos ahora con la foto\n" +
+                "- Modificar foto de producto\n" +
+
                         " ver 0.3   \n" +
-                        "------------ \n" +
+                        "--------------- \n" +
                         "Tercera Tarea \n" +
-                        "------------\n" +
-                        "- añadido actitivy Language\n" +
-                        "- implementar multidioma\n" +
-                            "- añadido lenguge en el navigation bar\n" +
-                            "- arreglos en el menú navigation bar (iconos, nombres en string, etc)\n" +
-                            "- banderas\n" +
-                            "- implementados idiomas (español, ingles, canario)\n" +
+                        "--------------- \n" +
+                        "- Añadido actitivy Language\n" +
+                        "- Implementar multidioma\n" +
+                            "- Añadido lenguge en el navigation bar\n" +
+                            "- Arreglos en el menú navigation bar (iconos, nombres en string, etc)\n" +
+                            "- Banderas\n" +
+                            "- Implementados idiomas (español, ingles, canario)\n" +
                             "- Implementar Proveedor de Contenido\n" +
                             "- Cursor\n" +
                             "- Librería 'com.amulyakhare:com.amullyakhare.textdrawable:1.0.1' (Para letras de color)\n" +

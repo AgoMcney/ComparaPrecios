@@ -1,8 +1,6 @@
 package com.example.agoney.comparaprecios.Fragment;
 
 
-import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
@@ -15,7 +13,6 @@ import android.support.v4.content.ContextCompat;
 import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
 //  import android.support.v7.view.ActionMode;  // para versiones más nuevas
-import android.util.Log;
 import android.view.ActionMode;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -27,7 +24,7 @@ import android.widget.AdapterView;
 import android.widget.Toast;
 
 import com.example.agoney.comparaprecios.ActivityModificar;
-import com.example.agoney.comparaprecios.ProductoCursorAdapter;
+import com.example.agoney.comparaprecios.ProveedorDeContenido.ProductoCursorAdapter;
 import com.example.agoney.comparaprecios.ProveedorDeContenido.Contrato;
 import com.example.agoney.comparaprecios.ProveedorDeContenido.ProductoProveedor;
 import com.example.agoney.comparaprecios.R;

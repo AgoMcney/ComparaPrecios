@@ -59,6 +59,7 @@
     <string name="aceptar_precios">Save price</string>
     <string name="ponerLista">Add to list</string>
     <string name="quitarLista">Remove from the list</string>
+    <string name="buscarTodo">Show all</string>
     <!--  App bar  -->
     <string name="ayuda">Help</string>
     <string name="editar">Edit</string>

@@ -1,7 +1,6 @@
 package com.example.agoney.comparaprecios;
 
 import android.app.Activity;
-import android.app.Instrumentation;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -12,7 +11,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -24,7 +22,7 @@ public class ActivityProductos extends AppCompatActivity {
     String cadenaFamilia; // para probar los checkbox
     int contaCheck; // contador de Check
     // creo los objetos de los view
-    Button btnAgregar, btnBuscar, btnEditar, btnEliminar ;
+    Button btnAgregar, btnBuscar, btnTodo, btnEliminar ;
     EditText editTextNombre;
     CheckBox checkBoxFamilia1, checkBoxFamilia2, checkBoxFamilia3, checkBoxFamilia4,
             checkBoxFamilia5, checkBoxFamilia6, checkBoxFamilia7, checkBoxFamilia8,
@@ -39,7 +37,7 @@ public class ActivityProductos extends AppCompatActivity {
         // creo los objetos de los view
         btnAgregar = (Button) findViewById(R.id.btnAgregar);
         btnBuscar = (Button) findViewById(R.id.btnBuscar);
-        btnEditar = (Button) findViewById(R.id.btnEditar);
+        btnTodo = (Button) findViewById(R.id.btnbuscarTodo);
         btnEliminar = (Button) findViewById(R.id.btnEliminar);
         editTextNombre = (EditText) findViewById(R.id.TxtInputNombre);
         checkBoxFamilia1= (CheckBox) findViewById(R.id.checkBoxFamilia1);
@@ -80,14 +78,17 @@ public class ActivityProductos extends AppCompatActivity {
             public void onClick(View view) {
                 validar();
                 if (error==false) {
+                    cadenaFamilia();
+                    Toast.makeText(contexto, "Ha buscado "+editTextNombre.getText().toString()+" en "+cadenaFamilia, Toast.LENGTH_LONG).show();
                     leerBusqueda();
                 }
             }
         });  // cerramos el click listener
-        btnEditar.setOnClickListener(new View.OnClickListener() {  // Listener del botón Agregar
+        btnTodo.setOnClickListener(new View.OnClickListener() {  // Listener del botón Agregar
             @Override
             public void onClick(View view) {
-                Toast.makeText (contexto, "Esto irá en el lista de resultados, cuando la implemente", Toast.LENGTH_SHORT).show();
+                Toast.makeText(contexto, "Mostrando todos los resultados", Toast.LENGTH_SHORT).show();
+                leerBusqueda();
             }
         });  // cerramos el click listener
         btnEliminar.setOnClickListener(new View.OnClickListener() {  // Listener del botón Agregar
@@ -121,8 +122,6 @@ public class ActivityProductos extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
     private void leerBusqueda() {
-        cadenaFamilia();
-        Toast.makeText(contexto, "Ha buscado "+editTextNombre.getText().toString()+" en "+cadenaFamilia, Toast.LENGTH_LONG).show();
         Intent intent = new Intent (this, ActivityResultado.class);
         startActivity(intent);
     }

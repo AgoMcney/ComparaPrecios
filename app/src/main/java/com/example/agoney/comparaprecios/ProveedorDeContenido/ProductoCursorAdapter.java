@@ -1,4 +1,4 @@
-package com.example.agoney.comparaprecios;
+package com.example.agoney.comparaprecios.ProveedorDeContenido;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -14,6 +14,10 @@ import android.widget.Toast;
 import com.amulyakhare.textdrawable.TextDrawable;
 import com.amulyakhare.textdrawable.util.ColorGenerator;
 import com.example.agoney.comparaprecios.ProveedorDeContenido.Contrato;
+import com.example.agoney.comparaprecios.R;
+import com.example.agoney.comparaprecios.utilImagen;
+
+import java.io.FileNotFoundException;
 
 
 /**
@@ -51,13 +55,22 @@ public class ProductoCursorAdapter extends CursorAdapter {
         // asigno valores a los views
         textViewNombre.setText(nombre);
         textViewFamilia.setText(String.valueOf(familia));
-        // letras de colores
-        ColorGenerator generator = ColorGenerator.MATERIAL; // o usa el default
-        int color = generator.getColor(familia); // genera un color según el campo dado
-        TextDrawable drawable = TextDrawable.builder()
-                .buildRound(nombre.substring(0,1), color);
-        ImageView image = (ImageView) view.findViewById(R.id.imageViewResultado);
-        image.setImageDrawable(drawable);
         view.setTag(ID);  // ponemos una etiqueta a cada item del listView
+    // letras de colores
+        ImageView image = (ImageView) view.findViewById(R.id.imageViewResultado);
+        try { // si tiene imagen asociada
+            utilImagen.loadImageFromStorage( context, "img_"+ID+".jpg", image);
+        } catch (FileNotFoundException e) { // si NO tiene imagen asociada
+            ColorGenerator generator = ColorGenerator.MATERIAL; // o usa el default
+            int color = generator.getColor(familia); // genera un color según el campo dado
+            TextDrawable drawable = TextDrawable.builder()
+                    .buildRound(nombre.substring(0,1), color);
+            image.setImageDrawable(drawable);
+        }
+
+
+
+
+
     }
 }

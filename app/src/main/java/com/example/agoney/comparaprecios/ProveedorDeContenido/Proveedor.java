@@ -13,7 +13,7 @@ import android.text.TextUtils;
 import android.util.SparseArray;
 
 public class Proveedor extends ContentProvider {
-    final static int DATABASE_VERSION = 1; // es la version de la base de datos
+    final static int DATABASE_VERSION = 2; // es la version de la base de datos
     final static String DATABASE_NAME = "Productos.db";  // nombre de la base de datos real
     // la uri 1 devuelve todos los registras galletas, la 2 solo 1
     final static int PRODUCTOS_ALL_REGS = 1;    //para que este bien organizado

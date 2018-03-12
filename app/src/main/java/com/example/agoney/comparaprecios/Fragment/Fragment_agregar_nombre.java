@@ -69,7 +69,7 @@ public class Fragment_agregar_nombre extends Fragment  {
         }
         RadioButton rb;
         for (int i=0;i<radioFamilia.getChildCount();i++){
-            rb = (RadioButton)  radioFamilia.getChildAt(i); //capturo el radioButton
+            rb = (RadioButton) radioFamilia.getChildAt(i); //capturo el radioButton
             if (rb.getText().toString().equals( familiaSeleccionadaAKI.toString() )){
                 rb.setChecked(true);
             }

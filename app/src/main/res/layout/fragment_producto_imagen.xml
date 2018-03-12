@@ -11,7 +11,18 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:contentDescription="@string/imagen"
-        app:srcCompat="@android:drawable/ic_input_add"
+        android:src="@drawable/ic_vector_add_image" />
+    <!--app:srcCompat="@drawable/ic_action_add_image"-->
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_Adjuntar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|right"
+        android:layout_margin="@dimen/fab_margin"
+        app:backgroundTint="@color/colorPrimary"
+        app:layout_anchor="@+id/container"
+        app:layout_anchorGravity="bottom|left"
+        app:srcCompat="@drawable/ic_action_adjuntar_blanco"
         />
 
 </FrameLayout>

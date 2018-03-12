@@ -35,6 +35,7 @@ public class DBHelperProducto extends SQLiteOpenHelper{
                 Contrato.Producto.PRECIO4+ " FLOAT, " +
                 Contrato.Producto.PRECIO5+ " FLOAT, " +
                 Contrato.Producto.PRECIO6+ " FLOAT " +
+                Contrato.Producto.IMAGEN+ " IMG" +
                 ")";
         db.execSQL(creacion);
         /*db.execSQL("CREATE TABLE "+  // ejecuta el Sql crear tabla

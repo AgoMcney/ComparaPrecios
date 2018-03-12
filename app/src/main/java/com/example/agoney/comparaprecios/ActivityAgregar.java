@@ -1,6 +1,7 @@
 package com.example.agoney.comparaprecios;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -55,6 +56,7 @@ public class ActivityAgregar extends AppCompatActivity
     EditText editTextTienda1, editTextTienda2, editTextTienda3, editTextTienda4, editTextTienda5, editTextTienda6;
     Float precio1, precio2, precio3, precio4, precio5, precio6;
     Fragment_agregar_nombre fragmentoProductoNombre;
+    Bitmap imagen;
     @Override
     protected void onCreate(Bundle savedInstanceState)  {
         super.onCreate(savedInstanceState);
@@ -173,6 +175,11 @@ public class ActivityAgregar extends AppCompatActivity
     public void FamiliaProducto(String FamiliaProducto) {
         familiaSeleccionada=FamiliaProducto;
     }
+    @Override
+    public void IntercambioImagen(Bitmap img) {
+        imagen=img;
+    }
+
 
     /**
      * A placeholder fragment containing a simple view.
@@ -272,10 +279,11 @@ public class ActivityAgregar extends AppCompatActivity
         nuevo.setPrecio4(((precio4==null)? 0:precio4 ));
         nuevo.setPrecio5(((precio5==null)? 0:precio5 ));
         nuevo.setPrecio6(((precio6==null)? 0:precio6 ));
+        nuevo.setImagen(imagen);
     // añado el producto a la lista
-        productos.add(nuevo); // añado nuevo producto al array de productos
-        comun.setProductos(productos); // añado al array fijo el array temporal.
-        ProductoProveedor.insert(getContentResolver(), nuevo);  // lo inserto en el proveedor de contenido
+//        productos.add(nuevo); // añado nuevo producto al array de productos
+//        comun.setProductos(productos); // añado al array fijo el array temporal.
+        ProductoProveedor.insert(getContentResolver(), nuevo, this);  // lo inserto en el proveedor de contenido
 // muestro resultados
         // Log.e("Nombre nuevo:", nuevo.getNombre()); // control de errores
        Toast toast_agregado= Toast.makeText (getApplicationContext(), "El producto se ha guardado. "

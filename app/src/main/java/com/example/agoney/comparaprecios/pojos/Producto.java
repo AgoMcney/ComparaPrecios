@@ -1,5 +1,6 @@
 package com.example.agoney.comparaprecios.pojos;
 
+import android.graphics.Bitmap;
 import android.os.Parcel;
 import android.os.Parcelable;
 
@@ -9,15 +10,18 @@ import android.os.Parcelable;
  */
 
 public class Producto implements Parcelable {
-    int ID;
-    String nombre;
-    String familia;
-    float precio1, precio2, precio3, precio4, precio5, precio6 ;
+    private int ID;
+    private String nombre;
+    private String familia;
+    private float precio1, precio2, precio3, precio4, precio5, precio6 ;
+    private Bitmap imagen;
 
     public Producto() { // constuctor vacío
+
     }
 
-    public Producto(int ID, String nombre, String familia, float precio1, float precio2, float precio3, float precio4, float precio5, float precio6) {
+    public Producto(int ID, String nombre, String familia, float precio1, float precio2,
+                    float precio3, float precio4, float precio5, float precio6, Bitmap img) {
         this.ID = ID;
         this.nombre = nombre;
         this.familia = familia;
@@ -27,6 +31,7 @@ public class Producto implements Parcelable {
         this.precio4 = precio4;
         this.precio5 = precio5;
         this.precio6 = precio6;
+        this.imagen=img;
     }
 
     protected Producto(Parcel in) {  // metodos implementados por el Parcelable
@@ -123,6 +128,14 @@ public class Producto implements Parcelable {
 
     public void setPrecio6(float precio6) {
         this.precio6 = precio6;
+    }
+
+    public Bitmap getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(Bitmap imagen) {
+        this.imagen = imagen;
     }
 
     @Override // metodos implementados por el Parcelable

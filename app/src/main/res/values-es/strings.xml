@@ -60,6 +60,7 @@
     <string name="aceptar_precios">Registrar precios</string>
     <string name="ponerLista">Añadir a la lista</string>
     <string name="quitarLista">Quitar de la lista</string>
+    <string name="buscarTodo">Todos</string>
     <!--  App bar  -->
     <string name="ayuda">Ayuda</string>
     <string name="editar">Editar</string>

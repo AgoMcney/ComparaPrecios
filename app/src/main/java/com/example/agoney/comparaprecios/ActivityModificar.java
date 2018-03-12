@@ -1,6 +1,7 @@
 package com.example.agoney.comparaprecios;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -17,6 +18,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
@@ -26,6 +28,8 @@ import com.example.agoney.comparaprecios.Fragment.Fragment_agregar_precios;
 import com.example.agoney.comparaprecios.ProveedorDeContenido.Contrato;
 import com.example.agoney.comparaprecios.ProveedorDeContenido.ProductoProveedor;
 import com.example.agoney.comparaprecios.pojos.Producto;
+
+import java.io.FileNotFoundException;
 
 
 public class ActivityModificar extends AppCompatActivity
@@ -53,6 +57,7 @@ public class ActivityModificar extends AppCompatActivity
     Fragment_agregar_imagen  fragment_agregar_imagen;
     Bundle BundleProducto;
     int ProductoId;
+    Bitmap imagen;
     @Override
     protected void onCreate(Bundle savedInstanceState)  {
         super.onCreate(savedInstanceState);
@@ -82,6 +87,7 @@ public class ActivityModificar extends AppCompatActivity
         Producto producto=  ProductoProveedor.readRecord(getContentResolver(), ProductoId); // recupero el producto de ese ID
 
         BundleProducto = new Bundle();
+        BundleProducto.putInt("id", producto.getID() );
         BundleProducto.putString("nombre", producto.getNombre() );
         BundleProducto.putString("familia", producto.getFamilia() );
         BundleProducto.putFloat("precio1",producto.getPrecio1());
@@ -188,7 +194,10 @@ public class ActivityModificar extends AppCompatActivity
     public void FamiliaProducto(String FamiliaProducto) {
         familiaSeleccionada=FamiliaProducto;
     }
-
+    @Override
+    public void IntercambioImagen(Bitmap img) {
+        imagen=img;
+    }
 
     /**
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
@@ -216,6 +225,7 @@ public class ActivityModificar extends AppCompatActivity
                     return fragment_agregar_precios;
                 case 2:
                     fragment_agregar_imagen= Fragment_agregar_imagen.newInstance();
+                    fragment_agregar_imagen.setArguments (BundleProducto);
                     return  fragment_agregar_imagen;
             }
             return Fragment_agregar_nombre.newInstance();
@@ -255,11 +265,12 @@ public class ActivityModificar extends AppCompatActivity
                 ((precio3==null)? 0:precio3 ),
                 ((precio4==null)? 0:precio4 ),
                 ((precio5==null)? 0:precio5 ),
-                ((precio6==null)? 0:precio6 )
+                ((precio6==null)? 0:precio6 ),
+                imagen
         );
 
     // añado el producto a la lista
-        ProductoProveedor.update(getContentResolver(), nuevo);  // lo inserto en el proveedor de contenido
+        ProductoProveedor.update(getContentResolver(), nuevo, this);  // lo inserto en el proveedor de contenido
 // muestro resultados
        Toast toast_agregado= Toast.makeText (getApplicationContext(), "El producto se ha modificado. "
                         + "\n - "+ getString(R.string.toast_name) + nuevo.getNombre()
