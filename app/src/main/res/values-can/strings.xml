@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Ojeando Precios</string>
+    <!--   Navigation Drawler  -->
+    <string name="navigation_drawer_open">Pafuera el cajón de navegación</string>
+    <string name="navigation_drawer_close">Padentro el cajón de navegación</string>
+    <string name="action_settings">Configuraciones</string>
+    <string name="item1">Cambiar Lista</string>
+    <string name="item2">Meter cosas</string>
+    <string name="item3">Palike</string>
+    <string name="item4">Prueba</string>
+    <string name="submenu">Comunicación</string>
+    <string name="item5">Compartir</string>
+    <string name="item6">Enviar</string>
+
+    <!--   familias de productos -->
+    <string name="familia1">Alimentación General</string>
+    <string name="familia2">Desayunos, dulces y pan</string>
+    <string name="familia3">Lácteos</string>
+    <string name="familia4">Congelados</string>
+    <string name="familia5">Dietética</string>
+    <string name="familia6">Bebidas</string>
+    <string name="familia7">Frescos</string>
+    <string name="familia8">Bebés</string>
+    <string name="familia9">Higiene Personal</string>
+    <string name="familia10">Droguería y limpieza</string>
+    <string name="familia11">Mascotas</string>
+    <string name="familia12">Otros</string>
+    <!--   tiendas de precios -->
+    <string name="tienda1">El corte inglés</string>
+    <string name="tienda2">Mercadona</string>
+    <string name="tienda3">Carrefour</string>
+    <string name="tienda4">Hiperdino</string>
+    <string name="tienda5">Spar</string>
+    <string name="tienda6">Otro</string>
+    <!--   errores -->
+    <string name="error_obligatorio">No puede estar vacío tolete</string>
+    <string name="error_numero">Campo debe ser númerico tolete</string>
+    <string name="error_prueba"></string>
+    <!--   Otras etiquetas -->
+    <string name="name">Nombre</string>
+    <string name="precio">Precio de las cosas</string>
+    <string name="imagen">Ponle una imagen</string>
+    <string name="contruccion">Como la carretera de la Aldea. \n Disculpe las molestias. </string>
+    <string name="version">Versión: 0.3</string>
+    <string name="section_format">Hola mundo de la sección: %1$d</string>
+    <string name="sin_datos">Naita</string>
+    <string name="progress_cargando_datos">No me estreses&#8230;</string>
+    <!--   botones -->
+    <string name="cabecera">Menú Principal</string>
+    <string name="productos">Cosas</string>
+    <string name="lista">Lista de Cosas</string>
+    <string name="infoApp">Ta cua pin pan</string>
+    <string name="salir">Pa fuera</string>
+    <string name="agregar">Mete cosas</string>
+    <string name="buscar">Echa un lukeo</string>
+    <string name="eliminar">Borra pa ya</string>
+    <string name="guardar">Guardar esto</string>
+    <string name="cancelar">Cancela, Cancela!</string>
+    <string name="aceptar_precios">Acuerdate de los precios</string>
+    <string name="ponerLista">Ponlo en la lista</string>
+    <string name="quitarLista">Sacar de la lista</string>
+    <!--  App bar  -->
+    <string name="ayuda">Socorro!</string>
+    <string name="editar">Cambiar</string>
+    <string name="borrar">Quita eso loco</string>
+    <!--  Titulos de menú  -->
+    <string name="titulo_productos">Lukeador de cosas</string>
+    <string name="titulo_agregar">Mete algo</string>
+    <string name="titulo_lista">Lista de la compra</string>
+    <string name="titulo_info">Información del programita</string>
+    <string name="titulo_ayuda">Ayuda del programita</string>
+    <string name="titulo_lenguaje">Cambiar Palike</string>
+    <string name="titulo_resultados">A ver que encuentro</string>
+    <string name="titulo_modificar">Cambiar la cosa</string>
+    <!--   Tabs  -->
+    <string name="tab1">Cosa</string>
+    <string name="tab2">Precio</string>
+    <string name="tab3">Foto</string>
+    <!--  Activity Lenguage  -->
+    <string name="elegir_languaje">Elije un palike</string>
+    <string name="spa">En Cristiano</string>
+    <string name="eng">Inglis Pitinglis</string>
+    <string name="can">Me llaman Canarito, porque yo naci en canarias</string>
+    <!--   Campos en Toast -->
+    <string name="toast_name">Nombre: </string>
+    <string name="toast_family">Familia: </string>
+    <string name="toast_price">precio: </string>
+    <!--   Ayudas  -->
+    <string name="ayuda_main">- Ayuda del menú Principal -\n
+                \n Este es el menú principal de la aplicación para crear listas de cosas y comparar precios, así no te llevas un susto y dices Ñoooos
+                \n Además tiene un menú por un lado para elegir con que lista que quieres ver, o como quieres que palike.</string>
+    <string name="ayuda_productos">- Ayuda del menú para buscar cosas -\n
+                \n Aqui puedes buscar cosas y añadirlas a tu lista,
+                 así como cambiarlos o quitarlos de enmedio. </string>
+    <string name="ayuda_agregar">- Ayuda del menú para meter cosas -\n
+                \n Meter todo tipo de cosas, ya sabes, del super y tal, para meter precios y hasta ponerle
+            una fotaca y quede todo chachi. Acuerdate guardar los precios desde el botón.</string>
+    <string name="ayuda_lista">- Ayuda del menú Listas de cosas - \n
+                \n Aui es donde ves tus listas de cosas que te has hecho y tal, y peudes ver donde sale más barato, pa ahorrarte unas perrillas.</string>
+    <string name="ayuda_info"></string>
+    <string name="ayuda_language">- Ayuda del menú Cambiar lenguaje - \n
+                \n Aqui es donde tu eliges pues de que palike quieres ver la cosa esta.</string>
+    <string name="ayuda_resultados">- Ayuda de cosas encontradas- \n
+                \n Pueees aqui se muestran las cosas que andabas buscando.
+            Además puedes editarlo, borrarlo y todo.</string>
+    <string name="ayuda_modificar">- Cambiar la cosa - \n
+            \n En esta pantalla podrá cambiar la cosa que creó. Vaya pa un lado y pa otro y cambie
+            el nombre, precio e imagen del producto. Acuerdate guardar los precios desde el botón.</string>
+</resources>

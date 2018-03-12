@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.agoney.comparaprecios.producto_nombre">
+    tools:context="com.example.agoney.comparaprecios.Fragment.Fragment_agregar_nombre">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -161,10 +161,5 @@
                 </RadioGroup>
             </ScrollView>
         </RelativeLayout>
-        <Button
-            android:id="@+id/btnTiburcio"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Para Tibu" />
     </LinearLayout>
 </FrameLayout>

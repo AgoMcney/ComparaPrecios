@@ -12,8 +12,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
-import android.text.TextUtils;
-import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -21,14 +20,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.RadioGroup;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.agoney.comparaprecios.Fragment.Fragment_agregar_imagen;
+import com.example.agoney.comparaprecios.Fragment.Fragment_agregar_nombre;
+import com.example.agoney.comparaprecios.Fragment.Fragment_agregar_precios;
+import com.example.agoney.comparaprecios.ProveedorDeContenido.ProductoProveedor;
+import com.example.agoney.comparaprecios.pojos.Producto;
+
 import java.util.ArrayList;
 
+
 public class ActivityAgregar extends AppCompatActivity
-        implements producto_nombre.OnFragmentInteractionListener,
-        producto_precios.OnFragmentInteractionListener,
-        producto_imagen.OnFragmentInteractionListener
+        implements Fragment_agregar_nombre.OnFragmentInteractionListener,
+        Fragment_agregar_precios.OnFragmentInteractionListener,
+        Fragment_agregar_imagen.OnFragmentInteractionListener
 {
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -39,19 +45,16 @@ public class ActivityAgregar extends AppCompatActivity
      * {@link android.support.v4.app.FragmentStatePagerAdapter}.
      */
     private SectionsPagerAdapter mSectionsPagerAdapter;
-
-    /**
-     * The {@link ViewPager} that will host the section contents.
-     */
     private ViewPager mViewPager;
     String familiaSeleccionada=null;
     static RadioGroup radioFamilia;
     static ClaseComun comun;
     boolean error=false; // controladores de errores
     static ArrayList<Producto> productos;
-     EditText txtInputNombre;
+    EditText txtInputNombre;
     EditText editTextTienda1, editTextTienda2, editTextTienda3, editTextTienda4, editTextTienda5, editTextTienda6;
     Float precio1, precio2, precio3, precio4, precio5, precio6;
+    Fragment_agregar_nombre fragmentoProductoNombre;
     @Override
     protected void onCreate(Bundle savedInstanceState)  {
         super.onCreate(savedInstanceState);
@@ -88,11 +91,13 @@ public class ActivityAgregar extends AppCompatActivity
             @Override
             public void onClick(View view) {
     //      validar();
-            if (error==false) // si no hay errores
+            validarNombre();
+            if (error==false) {// si no hay errores
                 AgregarProducto();
-    //      Toast.makeText (getApplicationContext(), "Hay "+ comun .getProductos().size()+" productos.", Toast.LENGTH_SHORT).show();
-                Snackbar.make(view, "Producto Guardado \n Hay "+ productos.size()+" productos. ", Snackbar.LENGTH_SHORT)
-                   .setAction("Action", null).show();
+                Snackbar.make(view, "Producto Guardado \n Hay " + productos.size() + " productos. ", Snackbar.LENGTH_SHORT)
+                    .setAction("Action", null).show();
+                finish();
+            }
             }
         });
         FloatingActionButton fabCancelar = (FloatingActionButton) findViewById(R.id.fab_Cancelar);
@@ -101,6 +106,7 @@ public class ActivityAgregar extends AppCompatActivity
             public void onClick(View view) {
                 Snackbar.make(view, "Cancelar", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+                finish();
             }
         });
     }
@@ -126,7 +132,6 @@ public class ActivityAgregar extends AppCompatActivity
             startActivity(intent); // ejecuta el intento.
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -167,11 +172,6 @@ public class ActivityAgregar extends AppCompatActivity
     @Override
     public void FamiliaProducto(String FamiliaProducto) {
         familiaSeleccionada=FamiliaProducto;
-    }
-
-    @Override
-    public void CampoTexto(EditText CampoTexto) {
-        txtInputNombre=CampoTexto;
     }
 
     /**
@@ -226,18 +226,15 @@ public class ActivityAgregar extends AppCompatActivity
             // Return a PlaceholderFragment (defined as a static inner class below).
             switch (position) {
                 case 0:
-                   return producto_nombre.newInstance(familiaSeleccionada);
-        //           return PlaceholderFragment.newInstance(position + 1);
+                    fragmentoProductoNombre = Fragment_agregar_nombre.newInstance();
+                    return fragmentoProductoNombre;
                 case 1:
-                  return producto_precios.newInstance();
-        //          return PlaceholderFragment.newInstance(position + 1);
+                    return Fragment_agregar_precios.newInstance();
                 case 2:
-                  return producto_imagen.newInstance();
-        //          return PlaceholderFragment.newInstance(position + 1);
+                    return Fragment_agregar_imagen.newInstance();
             }
-
             // return PlaceholderFragment.newInstance(position + 1);
-            return producto_nombre.newInstance(familiaSeleccionada);
+            return Fragment_agregar_nombre.newInstance();
 
         }
 
@@ -251,11 +248,11 @@ public class ActivityAgregar extends AppCompatActivity
         public CharSequence getPageTitle(int position) {  // metodo que devuelve nombre de las páginas
             switch (position) {
                 case 0:
-                    return "Producto";
+                    return getString(R.string.tab1);
                 case 1:
-                    return "Precios";
+                    return getString(R.string.tab2);
                 case 2:
-                    return "Imagen";
+                    return getString(R.string.tab3);
             }
             return null;
         }
@@ -267,6 +264,7 @@ public class ActivityAgregar extends AppCompatActivity
 //    Toast.makeText(getApplication(), txtInputNombre.getText().toString(), Toast.LENGTH_SHORT).show();
     // creo el producto
         Producto nuevo = new Producto();
+        nuevo.setNombre(fragmentoProductoNombre.getTextTxtInputNombre());
         nuevo.setFamilia(familiaSeleccionada);
         nuevo.setPrecio1(((precio1==null)? 0:precio1 ));
         nuevo.setPrecio2(((precio2==null)? 0:precio2 ));
@@ -277,107 +275,97 @@ public class ActivityAgregar extends AppCompatActivity
     // añado el producto a la lista
         productos.add(nuevo); // añado nuevo producto al array de productos
         comun.setProductos(productos); // añado al array fijo el array temporal.
+        ProductoProveedor.insert(getContentResolver(), nuevo);  // lo inserto en el proveedor de contenido
 // muestro resultados
-//        Toast.makeText(getApplication(),
-//                "Familia: "+familiaSeleccionada
-//                        + "\n"+ getString(R.string.tienda1) +  " precio: " + ((precio1==null)? "vacio":precio1 )
-//                        + "\n"+ getString(R.string.tienda2) +  " precio: " + ((precio2==null)? "vacio":precio2 )
-//                        + "\n"+ getString(R.string.tienda3) +  " precio: " + ((precio3==null)? "vacio":precio3 )
-//                        + "\n"+ getString(R.string.tienda4) +  " precio: " + ((precio4==null)? "vacio":precio4 )
-//                        + "\n"+ getString(R.string.tienda5) +  " precio: " + ((precio5==null)? "vacio":precio5 )
-//                        + "\n"+ getString(R.string.tienda6) +  " precio: " + ((precio6==null)? "vacio":precio6 ),
-//                Toast.LENGTH_LONG).show();
-
         // Log.e("Nombre nuevo:", nuevo.getNombre()); // control de errores
-
-        Toast.makeText (getApplicationContext(), "El producto se ha guardado. "
-    //                  + nuevo.nombre
-                        + "\n Familia: "+nuevo.familia
-                        + "\n"+ getString(R.string.tienda1) +  " precio: " +nuevo.getPrecio1()
-                        + "\n"+ getString(R.string.tienda2) +  " precio: " +nuevo.getPrecio2()
-                        + "\n"+ getString(R.string.tienda3) +  " precio: " +nuevo.getPrecio3()
-                        + "\n"+ getString(R.string.tienda4) +  " precio: " +nuevo.getPrecio4()
-                        + "\n"+ getString(R.string.tienda5) +  " precio: " +nuevo.getPrecio5()
-                        + "\n"+ getString(R.string.tienda6) +  " precio: " +nuevo.getPrecio6()
-                ,Toast.LENGTH_LONG).show();
+       Toast toast_agregado= Toast.makeText (getApplicationContext(), "El producto se ha guardado. "
+                        + "\n - "+ getString(R.string.toast_name) + nuevo.getNombre()
+                        + "\n"+ getString(R.string.toast_family)+ nuevo.getFamilia()
+                        + "\n"+ getString(R.string.tienda1) + " "+ getString(R.string.toast_price) +nuevo.getPrecio1()
+                        + "\n"+ getString(R.string.tienda2) + " "+ getString(R.string.toast_price) +nuevo.getPrecio2()
+                        + "\n"+ getString(R.string.tienda3) + " "+ getString(R.string.toast_price) +nuevo.getPrecio3()
+                        + "\n"+ getString(R.string.tienda4) + " "+ getString(R.string.toast_price) +nuevo.getPrecio4()
+                        + "\n"+ getString(R.string.tienda5) + " "+ getString(R.string.toast_price) +nuevo.getPrecio5()
+                        + "\n"+ getString(R.string.tienda6) + " "+ getString(R.string.toast_price) +nuevo.getPrecio6()
+                ,Toast.LENGTH_LONG);
+       toast_agregado.setGravity(Gravity.CENTER, 0,0); // asigno gravedad al toast
+       toast_agregado.show(); // muestro el toast
     }
-    public void validar(){
-        // vacio los errores
-        txtInputNombre.setError(null);
-        editTextTienda1.setError(null);
-        editTextTienda2.setError(null);
-        editTextTienda3.setError(null);
-        editTextTienda4.setError(null);
-        editTextTienda5.setError(null);
-        editTextTienda6.setError(null);
-        error=false;
-        // compruebo cada campo
-        if (TextUtils.isEmpty( txtInputNombre.getText())){
-            txtInputNombre.setError(getString(R.string.error_obligatorio)); // marcamos el error
-            txtInputNombre.requestFocus(); // llevamos el foco al error
+    public void validarNombre(){
+        error =false; // reseta el error
+        fragmentoProductoNombre.setErrorTxtInputNombre(null); // resetea el error
+        // if (fragmentoAgregarNombre.getTextTxtInputNombre()== null|fragmentoAgregarNombre.getTextTxtInputNombre() ==""|fragmentoAgregarNombre.getTextTxtInputNombre().isEmpty()) {
+        if (fragmentoProductoNombre.getTextTxtInputNombre().isEmpty()) {
+            fragmentoProductoNombre.setErrorTxtInputNombre(getString(R.string.error_obligatorio));
+            fragmentoProductoNombre.FocusTxtInputNombre(); // llevamos el foco al error
             error=true;
         }
-        if (TextUtils.isEmpty(editTextTienda1.getText().toString())){
-            precio1=0f; // si esta vacío le asigno un 0
-                /*
-                editTextTienda1.setError(getString(R.string.error_obligatorio)); // marcamos el error
-                editTextTienda1.requestFocus(); // llevamos el foco al error
-                error=true;
-                */
-        } else precio1 = Float.parseFloat(editTextTienda1.getText().toString()); // pasar el valor editable a float
-        if (TextUtils.isEmpty(editTextTienda2.getText().toString())){
-            precio2=0f; // si esta vacío le asigno un 0
-                /*
-                editTextTienda2.setError(getString(R.string.error_obligatorio)); // marcamos el error
-                editTextTienda2.requestFocus(); // llevamos el foco al error
-                error=true;
-                */
-        } else precio2 = Float.parseFloat(editTextTienda2.getText().toString()); // pasar el valor editable a float
-        if (TextUtils.isEmpty(editTextTienda3.getText().toString())){
-            precio3=0f; // si esta vacío le asigno un 0
-                /*
-                editTextTienda3.setError(getString(R.string.error_obligatorio)); // marcamos el error
-                editTextTienda3.requestFocus(); // llevamos el foco al error
-                error=true;
-                */
-        } else precio3 = Float.parseFloat(editTextTienda3.getText().toString()); // pasar el valor editable a float
-        if (TextUtils.isEmpty(editTextTienda4.getText().toString())){
-            precio4=0f; // si esta vacío le asigno un 0
-                /*
-                editTextTienda4.setError(getString(R.string.error_obligatorio)); // marcamos el error
-                editTextTienda4.requestFocus(); // llevamos el foco al error
-                error=true;
-                */
-        } else precio4 = Float.parseFloat(editTextTienda4.getText().toString()); // pasar el valor editable a float
-        if (TextUtils.isEmpty(editTextTienda5.getText().toString())){
-            precio5=0f; // si esta vacío le asigno un 0
-                /*
-                editTextTienda5.setError(getString(R.string.error_obligatorio)); // marcamos el error
-                editTextTienda5.requestFocus(); // llevamos el foco al error
-                error=true;
-                */
-        } else precio5 = Float.parseFloat(editTextTienda5.getText().toString()); // pasar el valor editable a float
-        if (TextUtils.isEmpty(editTextTienda6.getText().toString())){
-            precio6=0f; // si esta vacío le asigno un 0
-                /*
-                editTextTienda6.setError(getString(R.string.error_obligatorio)); // marcamos el error
-                editTextTienda6.requestFocus(); // llevamos el foco al error
-                error=true;
-                */
-        } else precio6 = Float.parseFloat(editTextTienda6.getText().toString()); // pasar el valor editable a float
-
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
+
+//    Antiguo metodo validar
+//    public void validar(){
+//        // vacio los errores
+//        txtInputNombre.setError(null);
+//        editTextTienda1.setError(null);
+//        editTextTienda2.setError(null);
+//        editTextTienda3.setError(null);
+//        editTextTienda4.setError(null);
+//        editTextTienda5.setError(null);
+//        editTextTienda6.setError(null);
+//        error=false;
+//        // compruebo cada campo
+//        if (TextUtils.isEmpty( txtInputNombre.getText())){
+//            txtInputNombre.setError(getString(R.string.error_obligatorio)); // marcamos el error
+//            txtInputNombre.requestFocus(); // llevamos el foco al error
+//            error=true;
+//        }
+//        if (TextUtils.isEmpty(editTextTienda1.getText().toString())){
+//            precio1=0f; // si esta vacío le asigno un 0
+//                /*
+//                editTextTienda1.setError(getString(R.string.error_obligatorio)); // marcamos el error
+//                editTextTienda1.requestFocus(); // llevamos el foco al error
+//                error=true;
+//                */
+//        } else precio1 = Float.parseFloat(editTextTienda1.getText().toString()); // pasar el valor editable a float
+//        if (TextUtils.isEmpty(editTextTienda2.getText().toString())){
+//            precio2=0f; // si esta vacío le asigno un 0
+//                /*
+//                editTextTienda2.setError(getString(R.string.error_obligatorio)); // marcamos el error
+//                editTextTienda2.requestFocus(); // llevamos el foco al error
+//                error=true;
+//                */
+//        } else precio2 = Float.parseFloat(editTextTienda2.getText().toString()); // pasar el valor editable a float
+//        if (TextUtils.isEmpty(editTextTienda3.getText().toString())){
+//            precio3=0f; // si esta vacío le asigno un 0
+//                /*
+//                editTextTienda3.setError(getString(R.string.error_obligatorio)); // marcamos el error
+//                editTextTienda3.requestFocus(); // llevamos el foco al error
+//                error=true;
+//                */
+//        } else precio3 = Float.parseFloat(editTextTienda3.getText().toString()); // pasar el valor editable a float
+//        if (TextUtils.isEmpty(editTextTienda4.getText().toString())){
+//            precio4=0f; // si esta vacío le asigno un 0
+//                /*
+//                editTextTienda4.setError(getString(R.string.error_obligatorio)); // marcamos el error
+//                editTextTienda4.requestFocus(); // llevamos el foco al error
+//                error=true;
+//                */
+//        } else precio4 = Float.parseFloat(editTextTienda4.getText().toString()); // pasar el valor editable a float
+//        if (TextUtils.isEmpty(editTextTienda5.getText().toString())){
+//            precio5=0f; // si esta vacío le asigno un 0
+//                /*
+//                editTextTienda5.setError(getString(R.string.error_obligatorio)); // marcamos el error
+//                editTextTienda5.requestFocus(); // llevamos el foco al error
+//                error=true;
+//                */
+//        } else precio5 = Float.parseFloat(editTextTienda5.getText().toString()); // pasar el valor editable a float
+//        if (TextUtils.isEmpty(editTextTienda6.getText().toString())){
+//            precio6=0f; // si esta vacío le asigno un 0
+//                /*
+//                editTextTienda6.setError(getString(R.string.error_obligatorio)); // marcamos el error
+//                editTextTienda6.requestFocus(); // llevamos el foco al error
+//                error=true;
+//                */
+//        } else precio6 = Float.parseFloat(editTextTienda6.getText().toString()); // pasar el valor editable a float
+//  }

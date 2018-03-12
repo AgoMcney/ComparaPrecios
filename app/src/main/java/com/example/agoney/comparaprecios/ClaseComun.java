@@ -2,6 +2,8 @@ package com.example.agoney.comparaprecios;
 
 import android.app.Application;
 
+import com.example.agoney.comparaprecios.pojos.Producto;
+
 import java.util.ArrayList;
 
 /**

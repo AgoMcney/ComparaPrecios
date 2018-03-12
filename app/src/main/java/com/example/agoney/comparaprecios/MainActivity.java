@@ -1,14 +1,10 @@
 package com.example.agoney.comparaprecios;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -18,7 +14,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -31,18 +26,17 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle(R.string.app_name);  // refresca el titulo de la appBar
         setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab); // FAB correo
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View view) {  // acción del FAB
                 sendEmail();  // metodo que envia el email
               //  Snackbar.make(view, "Para ponerte contacto conmigo manda email a agoney.informatica@gmail.com", Snackbar.LENGTH_LONG)
                 //        .setAction("Action", null).show();
             }
         });
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -123,6 +117,14 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent); // ejecuta el intento.
             return true;
         }
+//        if (id == R.id.action_spain) { // botón de ayuda de la app bar
+//            cambiarIdioma(SPANISH);
+//            return true;
+//        }
+//        if (id == R.id.action_uk) { // botón de ayuda de la app bar
+//            cambiarIdioma(ENGLISH);
+//            return true;
+//        }
         return super.onOptionsItemSelected(item);
     }
 
@@ -134,12 +136,13 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_lista) {
             Toast.makeText(contexto, "Opción para seleccionar su lista de la compra", Toast.LENGTH_SHORT).show();
-        } else if (id == R.id.nav_Agregar) {
+        } else if (id == R.id.nav_agregar) {
             // intent que va a la sección de agregar Producto
             Intent intent = new Intent(getApplicationContext(), ActivityAgregar.class);
             startActivity(intent);
-        } else if (id == R.id.nav_manage) {
-            Toast.makeText(contexto, "Probablemente quite esto", Toast.LENGTH_SHORT).show();
+        } else if (id == R.id.nav_language) {
+            Intent intent = new Intent(getApplicationContext(), ActivityLanguage.class);
+            startActivity(intent);
         } else if (id == R.id.nav_compartir) {
             Toast.makeText(contexto, "En el futuro podrá compartir su lista de la compra aquí", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_send) {

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array
+        name="familias">
+        <item>@string/familia1</item>
+        <item>@string/familia2</item>
+        <item>@string/familia3</item>
+        <item>@string/familia4</item>
+        <item>@string/familia5</item>
+        <item>@string/familia6</item>
+        <item>@string/familia7</item>
+        <item>@string/familia8</item>
+        <item>@string/familia9</item>
+        <item>@string/familia10</item>
+        <item>@string/familia11</item>
+        <item>@string/familia12</item>
+    </string-array>
+
+</resources>

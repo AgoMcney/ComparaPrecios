@@ -1,0 +1,58 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.agoney.comparaprecios.Fragment.ProductoListFragment"
+    android:orientation="vertical"
+    >
+
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dip"
+    android:layout_weight="1"
+    android:id="@+id/Fragment_Pager_List_FrameLayout"
+    >
+    <!-- Para que empieze dejando un margen de la medida de la barra
+    android:layout_marginTop="?android:attr/actionBarSize"-->
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@android:id/list"
+        android:drawSelectorOnTop="false"
+        android:layout_marginTop="@dimen/appbar_padding_top"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@android:id/empty"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/sin_datos"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fragment_status"
+        android:layout_gravity="center"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:visibility="gone"
+        >
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="?android:attr/progressBarStyle"
+            android:layout_marginBottom="8dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/login_status_message"
+            android:layout_marginBottom="16dp"
+            android:text="@string/progress_cargando_datos"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            />
+    </LinearLayout>
+</FrameLayout>
+</LinearLayout>

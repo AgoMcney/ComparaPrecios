@@ -19,31 +19,52 @@ public class ActivityAyuda extends AppCompatActivity {
         txtAyuda.setText(origen);  // prueba
         switch (origen){
             case "main":
-                txtAyuda.setText("Ayuda del menú Principal\n"
-                + "\nEste es el menú principal de la aplicación para crear listas de compras y comparar precios. "
-                + "Además tiene un menú lateral para elegir con que lista desea trabajar."
-                );
+                txtAyuda.setText(getString(R.string.ayuda_main));
+//                txtAyuda.setText("Ayuda del menú Principal\n"
+//                + "\nEste es el menú principal de la aplicación para crear listas de compras y comparar precios. "
+//                + "Además tiene un menú lateral para elegir con que lista desea trabajar."
+//                );
                 break;
             case "productos":
-                txtAyuda.setText("Ayuda del menú Productos"
-                + "\nEn esta pantalla podrá buscar productos y añadirlos a su lista. "
-                + "Así como editarlos o eliminarlos."
-                );
+                txtAyuda.setText(getString(R.string.ayuda_productos));
+//                txtAyuda.setText("Ayuda del menú Productos"
+//                + "\nEn esta pantalla podrá buscar productos y añadirlos a su lista. "
+//                + "Así como editarlos o eliminarlos."
+//                );
                 break;
             case "agregar":
-                txtAyuda.setText("Ayuda del menú Agregar \n"
-                + "\nEn esta pantalla podrá agregar productos, precios y hasta añadir una foto al artículo."
-                );
+                txtAyuda.setText(getString(R.string.ayuda_agregar));
+//                txtAyuda.setText("Ayuda del menú Agregar \n"
+//                + "\nEn esta pantalla podrá agregar productos, precios y hasta añadir una foto al artículo."
+//                );
                 break;
             case "lista":
-                txtAyuda.setText("Ayuda del menú Listas \n"
-                + "\nEn esta pantalla podrá consultar su lista de la compra y comparar los precios."
-                );
+                    txtAyuda.setText(getString(R.string.ayuda_lista));
+//                txtAyuda.setText("Ayuda del menú Listas \n"
+//                + "\nEn esta pantalla podrá consultar su lista de la compra y comparar los precios."
+//                );
                 break;
             case "info":
                 txtAyuda.setText("Información de la app. \n"
                         +"\nControl de versiones\n" +
                         "-------------------------------\n" +
+                        " ver 0.3   \n" +
+                        "------------ \n" +
+                        "Tercera Tarea \n" +
+                        "------------\n" +
+                        "- añadido actitivy Language\n" +
+                        "- implementar multidioma\n" +
+                            "- añadido lenguge en el navigation bar\n" +
+                            "- arreglos en el menú navigation bar (iconos, nombres en string, etc)\n" +
+                            "- banderas\n" +
+                            "- implementados idiomas (español, ingles, canario)\n" +
+                            "- Implementar Proveedor de Contenido\n" +
+                            "- Cursor\n" +
+                            "- Librería 'com.amulyakhare:com.amullyakhare.textdrawable:1.0.1' (Para letras de color)\n" +
+                        "- Metodo insertar en el Proveedor de contenido. \n" +
+                        "- Contextual Action Bar, con editar y borrar\n" +
+                            "- añadido Activity Modificar y Actitivy Resultados\n" +
+                            "- corregidos fallos en modificar/agregar\n" +
                         "ver 0.2.1\n"+
                         "---------------\n" +
                         "Segunda Tarea\n" +
@@ -54,7 +75,6 @@ public class ActivityAyuda extends AppCompatActivity {
                         "- Retorno de ayuda corregido. \n" +
                         "- Implementados fragmentos en el TabActivity AgregarProductos.\n" +
                         "- Implementada ClaseComun y guardado en el array de Productos"+
-                        "* botón para tibu" +
                         "\n" +
                         "ver 0.2\n" +
                         "---------------\n" +
@@ -78,6 +98,17 @@ public class ActivityAyuda extends AppCompatActivity {
                         "Primera Tarea\n" +
                         "---------------"
                 );
+                break;
+            case "language":
+                txtAyuda.setText(getString(R.string.ayuda_language));
+//                txtAyuda.setText("Ayuda del menú Cambiar lenguaje \n"
+//                                + "\n En esta pantalla podrá cambiar el lenguaje del programa\n");
+                break;
+            case "resultados":
+                txtAyuda.setText(getString(R.string.ayuda_resultados));
+                break;
+            case "modificar":
+                txtAyuda.setText(getString(R.string.ayuda_modificar));
                 break;
             default:
                 break;
@@ -110,6 +141,18 @@ public class ActivityAyuda extends AppCompatActivity {
                         return true;
                     case "info":
                         intent = new Intent(this, ActivityInfo.class);
+                        startActivity(intent);
+                        return true;
+                    case "language":
+                        intent = new Intent(this, ActivityLanguage.class);
+                        startActivity(intent);
+                        return true;
+                    case "resultados":
+                        intent = new Intent(this, ActivityResultado.class);
+                        startActivity(intent);
+                        return true;
+                    case "modificar":
+                        intent = new Intent(this, ActivityResultado.class);
                         startActivity(intent);
                         return true;
                 }

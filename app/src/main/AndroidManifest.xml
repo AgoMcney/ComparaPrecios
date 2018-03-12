@@ -3,14 +3,13 @@
     package="com.example.agoney.comparaprecios">
 
     <application
+        android:name=".ClaseComun"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:name=".ClaseComun"
-        >
+        android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
@@ -73,6 +72,44 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ActivityProductos" />
         </activity>
+        <activity
+            android:name=".ActivityLanguage"
+            android:label="@string/titulo_lenguaje"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".ActivityResultado"
+            android:label="@string/titulo_resultados"
+            android:parentActivityName=".ActivityProductos"
+            android:theme="@style/AppTheme.NoActionBar">
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ActivityProductos" />
+        </activity>
+        <activity
+            android:name=".ActivityModificar"
+            android:label="@string/titulo_modificar"
+            android:parentActivityName=".ActivityResultado"
+            android:theme="@style/AppTheme.NoActionBar">
+        <!-- Parent activity meta-data to support 4.0 and lower -->
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".ActivityResultado" />
+        </activity>
+
+        <provider
+            android:authorities="com.example.agoney.comparaprecios.ProveedorDeContenido.Proveedor"
+            android:name=".ProveedorDeContenido.Proveedor"
+            android:enabled="true"
+            android:exported="true"
+            />
+
     </application>
 
 </manifest>

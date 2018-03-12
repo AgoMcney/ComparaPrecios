@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Compare Prices</string>
+    <!--   Navigation Drawler  -->
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_settings">Settings</string>
+    <string name="item1">Change List</string>
+    <string name="item2">Add Product</string>
+    <string name="item3">Language</string>
+    <string name="item4">Try</string>
+    <string name="submenu">Communication</string>
+    <string name="item5">Share</string>
+    <string name="item6">Send</string>
+    <!--   familias de productos -->
+    <string name="familia1">General Food</string>
+    <string name="familia2">Breakfasts, sweets and bread</string>
+    <string name="familia3">Dairy products</string>
+    <string name="familia4">Frozen Foods</string>
+    <string name="familia5">Dietetics</string>
+    <string name="familia6">Drinks</string>
+    <string name="familia7">Fresh</string>
+    <string name="familia8">Babies</string>
+    <string name="familia9">Personal hygiene</string>
+    <string name="familia10">Drugstore and cleaning</string>
+    <string name="familia11">Pets</string>
+    <string name="familia12">Others</string>
+    <!--   tiendas de precios -->
+    <string name="tienda1">El corte inglés</string>
+    <string name="tienda2">Mercadona</string>
+    <string name="tienda3">Carrefour</string>
+    <string name="tienda4">Hiperdino</string>
+    <string name="tienda5">Spar</string>
+    <string name="tienda6">Others</string>
+    <!--   errores -->
+    <string name="error_obligatorio">Field can not be empty</string>
+    <string name="error_numero">Field must be numeric</string>
+    <string name="error_prueba"></string>
+    <!--   Otras etiquetas -->
+    <string name="name">Name</string>
+    <string name="precio">Price of the product</string>
+    <string name="imagen">Add a picture to the product</string>
+    <string name="contruccion">Application under construction. \n Sorry for the inconvenience. </string>
+    <string name="version">Version: 0.3</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="sin_datos">No data to display</string>
+    <string name="progress_cargando_datos">Loading data&#8230;</string>
+    <!--   botones -->
+    <string name="cabecera">Main menu</string>
+    <string name="productos">Products</string>
+    <string name="lista">Shopping list</string>
+    <string name="infoApp">Information</string>
+    <string name="salir">Exit</string>
+    <string name="agregar">Add</string>
+    <string name="buscar">Find</string>
+    <string name="eliminar">Delete</string>
+    <string name="guardar">Save</string>
+    <string name="cancelar">Cancel</string>
+    <string name="aceptar_precios">Save price</string>
+    <string name="ponerLista">Add to list</string>
+    <string name="quitarLista">Remove from the list</string>
+    <!--  App bar  -->
+    <string name="ayuda">Help</string>
+    <string name="editar">Edit</string>
+    <string name="borrar">Delete</string>
+    <!--  Titulos de menú  -->
+    <string name="titulo_productos">Product Finder</string>
+    <string name="titulo_agregar">Add a product</string>
+    <string name="titulo_lista">Shopping list</string>
+    <string name="titulo_info">App Information</string>
+    <string name="titulo_ayuda">App Help</string>
+    <string name="titulo_lenguaje">Change language</string>
+    <string name="titulo_resultados">Search results</string>
+    <string name="titulo_modificar">Modify a product</string>
+    <!--   Tabs  -->
+    <string name="tab1">Product</string>
+    <string name="tab2">Prices</string>
+    <string name="tab3">Image</string>
+    <!--  Activity Lenguage  -->
+    <string name="elegir_languaje">Choose a Language</string>
+    <string name="spa">Spanish</string>
+    <string name="eng">English</string>
+    <string name="can">Canary</string>
+    <!--   Campos en Toast -->
+    <string name="toast_name">Name: </string>
+    <string name="toast_family">Family: </string>
+    <string name="toast_price">cost: </string>
+    <!--   Ayudas  -->
+    <string name="ayuda_main">- Main menu help -\n
+                \n This is the application\'s main menu for creating shopping lists and comparing prices.
+                \n In addition, you have a side menu to choose with which to use or change the language </string>
+    <string name="ayuda_productos">- Products menu help -\n
+                \n In this screen you can search for products and add them to your list,
+                 as well as edit or delete them. </string>
+    <string name="ayuda_agregar">- Add menu help - \n
+                \n In this screen you can add products, prices and even add a photo to the article.
+            Remember to save the prices from the button.</string>
+    <string name="ayuda_lista">- List menu help - \n
+                \n On this screen you can check your shopping list and compare prices.</string>
+    <string name="ayuda_info"></string>
+    <string name="ayuda_language">- Change language help - \n
+                \n In this screen you can change the language of the program</string>
+    <string name="ayuda_resultados">- Results help - \n
+                \n This screen displays the results of your search.
+            You can also select an item and edit or delete it.</string>
+    <string name="ayuda_modificar">- Modify a product - \n
+            \n On this screen you can modify the product. Scroll through the screens and change
+            the name, price and image of the product. Remember to save the prices from the button.</string>
+</resources>

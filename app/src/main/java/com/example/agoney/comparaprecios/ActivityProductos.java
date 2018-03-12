@@ -1,6 +1,7 @@
 package com.example.agoney.comparaprecios;
 
 import android.app.Activity;
+import android.app.Instrumentation;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -28,6 +30,7 @@ public class ActivityProductos extends AppCompatActivity {
             checkBoxFamilia5, checkBoxFamilia6, checkBoxFamilia7, checkBoxFamilia8,
             checkBoxFamilia9, checkBoxFamilia10, checkBoxFamilia11, checkBoxFamilia12 ;
     ArrayList<CheckBox> arrayFamilias = new ArrayList<CheckBox>();
+//    ListView listViewResultados;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,7 +66,7 @@ public class ActivityProductos extends AppCompatActivity {
         arrayFamilias.add(checkBoxFamilia10);
         arrayFamilias.add(checkBoxFamilia11);
         arrayFamilias.add(checkBoxFamilia12);
-
+//        listViewResultados = (ListView) findViewById(R.id.listViewResultados);
         btnAgregar.setOnClickListener(new View.OnClickListener() {  // Listener del botón Agregar
             @Override
             public void onClick(View view) {
@@ -120,7 +123,8 @@ public class ActivityProductos extends AppCompatActivity {
     private void leerBusqueda() {
         cadenaFamilia();
         Toast.makeText(contexto, "Ha buscado "+editTextNombre.getText().toString()+" en "+cadenaFamilia, Toast.LENGTH_LONG).show();
-      //  Toast.makeText (contexto, "Hay "+ comun .getProductos().size()+" productos.", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent (this, ActivityResultado.class);
+        startActivity(intent);
     }
     public void validar() {
         // vacio los errores

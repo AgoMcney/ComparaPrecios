@@ -1,9 +1,16 @@
 <resources>
-    <string name="app_name">ComparaPrecios</string>
+    <string name="app_name">Compara Precios Original</string>
     <!--   Navigation Drawler  -->
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="action_settings">Settings</string>
+    <string name="navigation_drawer_open">Abrir el cajón de navegación</string>
+    <string name="navigation_drawer_close">Cerrar el cajón de navegación</string>
+    <string name="action_settings">Configuraciones</string>
+    <string name="item1">Cambiar Lista</string>
+    <string name="item2">Agregar Producto</string>
+    <string name="item3">Lenguaje</string>
+    <string name="item4">Prueba</string>
+    <string name="submenu">Comunicación</string>
+    <string name="item5">Compartir</string>
+    <string name="item6">Enviar</string>
 
     <!--   familias de productos -->
     <string name="familia1">Alimentación General</string>
@@ -34,7 +41,10 @@
     <string name="precio">Precio del producto</string>
     <string name="imagen">Añada una imagen al producto</string>
     <string name="contruccion">Aplicación en contrucción. \n Disculpe las molestias. </string>
-    <string name="version">Versión: 0.2</string>
+    <string name="version">Versión: 0.3</string>
+    <string name="section_format">Hola mundo de la sección: %1$d</string>
+    <string name="sin_datos">Sin datos para mostrar</string>
+    <string name="progress_cargando_datos">Cargando datos&#8230;</string>
     <!--   botones -->
     <string name="cabecera">Menú Principal</string>
     <string name="productos">Productos</string>
@@ -42,23 +52,60 @@
     <string name="infoApp">Información</string>
     <string name="salir">Salir</string>
     <string name="agregar">Agregar</string>
-    <string name="editar">Editar</string>
     <string name="buscar">Buscar</string>
     <string name="eliminar">Eliminar</string>
     <string name="guardar">Guardar</string>
     <string name="cancelar">Cancelar</string>
-    <string name="title_activity_agregar">ActivityAgregar</string>
-    <string name="section_format">Hello World from section: %1$d</string>
     <string name="aceptar_precios">Registrar precios</string>
+    <string name="ponerLista">Añadir a la lista</string>
+    <string name="quitarLista">Quitar de la lista</string>
     <!--  App bar  -->
     <string name="ayuda">Ayuda</string>
+    <string name="editar">Editar</string>
+    <string name="borrar">Eliminar</string>
     <!--  Titulos de menú  -->
     <string name="titulo_productos">Buscador de productos</string>
     <string name="titulo_agregar">Agregar un producto</string>
     <string name="titulo_lista">Lista de la compra</string>
     <string name="titulo_info">Información de la App</string>
     <string name="titulo_ayuda">Ayuda de la App</string>
+    <string name="titulo_lenguaje">Cambiar Lenguaje</string>
+    <string name="titulo_resultados">Resultados de la búsqueda</string>
+    <string name="titulo_modificar">Modificar un producto</string>
+    <!--   Tabs  -->
+    <string name="tab1">Producto</string>
+    <string name="tab2">Precios</string>
+    <string name="tab3">Imagen</string>
+    <!--  Activity Lenguage  -->
+    <string name="elegir_languaje">Elije un Lenguaje</string>
+    <string name="spa">Español</string>
+    <string name="eng">Inglés</string>
+    <string name="can">Canario</string>
+    <!--   Campos en Toast -->
+    <string name="toast_name">Nombre: </string>
+    <string name="toast_family">Familia: </string>
+    <string name="toast_price">Precio: </string>
+    <!--   Ayudas  -->
+    <string name="ayuda_main">- Ayuda del menú Principal -\n
+                \n Este es el menú principal de la aplicación para crear listas de compras y comparar precios.
+                \n Además tiene un menú lateral para elegir con que lista desea trabajar o cambiar el idioma</string>
+    <string name="ayuda_productos">- Ayuda del menú Productos -\n
+                \n En esta pantalla podrá buscar productos y añadirlos a su lista,
+                 así como editarlos o eliminarlos. </string>
+    <string name="ayuda_agregar">- Ayuda del menú Agregar -\n
+                \n En esta pantalla podrá agregar productos, precios y hasta añadir una foto al
+                artículo. Recuerde guardar los precios desde el botón.</string>
+    <string name="ayuda_lista">- Ayuda del menú Listas - \n
+                \n En esta pantalla podrá consultar su lista de la compra y comparar los precios.</string>
+    <string name="ayuda_info"></string>
+    <string name="ayuda_language">- Ayuda del menú Cambiar lenguaje - \n
+                \n En esta pantalla podrá cambiar el lenguaje del programa</string>
+    <string name="ayuda_resultados">- Ayuda de resultados - \n
+                \n En esta pantalla se muestran los resultados de su busqueda.
+            Además podra seleccionar un item y editarlo o borrarlo.</string>
+    <string name="ayuda_modificar">- Modificar un producto - \n
+            \n En esta pantalla podrá modificar el producto. Desplácese por las pantallas y cambie
+            el nombre, precio e imagen del producto. Recuerde guardar los precios desde el botón.</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-
 </resources>

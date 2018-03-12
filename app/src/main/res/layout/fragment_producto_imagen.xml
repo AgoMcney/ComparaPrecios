@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.example.agoney.comparaprecios.producto_imagen">
+    tools:context="com.example.agoney.comparaprecios.Fragment.Fragment_agregar_imagen">
 
     <!-- TODO: Update blank fragment layout -->
     <ImageButton
