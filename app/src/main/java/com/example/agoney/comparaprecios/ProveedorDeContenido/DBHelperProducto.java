@@ -45,15 +45,7 @@ public class DBHelperProducto extends SQLiteOpenHelper{
 //     Contrato.Producto._ID+" INTEGER NOT NULL PRIMARY KEY  AUTOINCREMENT, "  + // campo ID autoincrementado
 
                 "_id INTEGER NOT NULL PRIMARY KEY ON CONFLICT ROLLBACK AUTOINCREMENT, "  + // campo ID autoincrementado
-                Contrato.Lista.NOMBRE+ " TEXT, " +
-                Contrato.Producto.FAMILIA+ " TEXT, " +
-                Contrato.Producto.PRECIO1+ " FLOAT, " +
-                Contrato.Producto.PRECIO2+ " FLOAT, " +
-                Contrato.Producto.PRECIO3+ " FLOAT, " +
-                Contrato.Producto.PRECIO4+ " FLOAT, " +
-                Contrato.Producto.PRECIO5+ " FLOAT, " +
-                Contrato.Producto.PRECIO6+ " FLOAT " +
-                Contrato.Producto.IMAGEN+ " IMG" +
+                Contrato.Lista.NOMBRE+ " TEXT, "+
                 ")";
         db.execSQL(creacion);
 
@@ -136,6 +128,24 @@ public class DBHelperProducto extends SQLiteOpenHelper{
         ;
         db.execSQL(metida);
         Log.i("tiburcio", "metida: " + metida);
+         metida = "INSERT INTO "+  // insertamos valores
+                Contrato.Lista.NOMBRE_TABLA +
+                " ("+
+                Contrato.Lista._ID + ", " +
+                Contrato.Lista.NOMBRE +
+                ") VALUES "
+//                    + "('Bandama','Otros',23,42,53,11,33,44),"
+//                    + "('Tirma','Otros',2,5,2,6,8,5),"
+//                    + "('Cubanitos','Otros',4,5,6,3,5,6),"
+//                    + "('Yogurt','Frescos',2,3,5,2,4,3),"
+//                    + "('CocaCola','Bebidas',1,0.9,1,1.1,1,1),"
+//                    + "('Croquetas congeladas','Congelados',7,8,7,7,7.5,7.6)"
+                + "(1,'Lunes'),"
+                + "(2,'Viernes'),"
+                + "(3,'Mensual'),"
+
+                ;
+        db.execSQL(metida);
 
     }
 
